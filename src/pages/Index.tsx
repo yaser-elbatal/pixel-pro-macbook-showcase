@@ -14,7 +14,7 @@ const Index = () => {
 
   useEffect(() => {
     const img = new Image();
-    img.src = "/lovable-uploads/e3c4c460-58b8-4289-ac1a-50406f3594e0.png";
+    img.src = "/lovable-uploads/953b6699-2d3b-4296-bc93-5f17a7b2d2fe.png";
     img.onload = () => setIsImageLoaded(true);
   }, []);
 
@@ -58,7 +58,7 @@ const Index = () => {
               <AspectRatio ratio={4/3} className="overflow-hidden rounded-lg bg-navy-800/30">
                 {isImageLoaded ? (
                   <img
-                    src="/lovable-uploads/e3c4c460-58b8-4289-ac1a-50406f3594e0.png"
+                    src="/lovable-uploads/953b6699-2d3b-4296-bc93-5f17a7b2d2fe.png"
                     alt="AHLN Smart Delivery Box"
                     className="w-full h-full object-cover transition-all duration-500 ease-in-out"
                     style={{ opacity: 1, transform: 'scale(1)' }}
@@ -75,6 +75,46 @@ const Index = () => {
 
         <Features />
         <HowItWorks />
+
+        {/* Product Showcase Section */}
+        <section className="py-20 bg-navy-900">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <h2 className="text-3xl md:text-5xl font-bold">
+                  Advanced Smart Delivery Solution
+                </h2>
+                <p className="text-lg text-gray-300">
+                  Our state-of-the-art delivery box comes equipped with advanced security features,
+                  including facial recognition, smart access control, and 24/7 monitoring capabilities.
+                </p>
+                <ul className="space-y-3 text-gray-300">
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    Smart Access Control
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    Weather-Resistant Design
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    Real-time Monitoring
+                  </li>
+                </ul>
+              </div>
+              <div className="relative">
+                <img
+                  src="/lovable-uploads/953b6699-2d3b-4296-bc93-5f17a7b2d2fe.png"
+                  alt="AHLN Smart Box Features"
+                  className="w-full h-auto rounded-lg shadow-xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 to-transparent rounded-lg"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <LatestNews />
         <Newsletter />
       </div>
@@ -83,3 +123,4 @@ const Index = () => {
 };
 
 export default Index;
+
