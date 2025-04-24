@@ -1,21 +1,65 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import MacBookShowcase from '../components/MacBookShowcase';
+import Navbar from '@/components/Navbar';
+import Features from '@/components/Features';
+import HowItWorks from '@/components/HowItWorks';
+import LatestNews from '@/components/LatestNews';
+import Newsletter from '@/components/Newsletter';
+import { Button } from "@/components/ui/button";
 
 const Index = () => {
   return (
     <>
       <Helmet>
-        <title>MacBook Pro 14" - Professional Grade Performance</title>
-        <meta name="description" content="Experience the power of MacBook Pro 14-inch. Featuring M2 Pro or M2 Max chip, up to 18 hours of battery life, and a stunning Liquid Retina XDR display." />
-        <meta name="keywords" content="MacBook Pro, Apple, M2 Pro, M2 Max, Liquid Retina XDR, Professional Laptop" />
-        <meta property="og:title" content="MacBook Pro 14 - Professional Grade Performance" />
-        <meta property="og:description" content="Experience the power of MacBook Pro 14-inch with M2 Pro or M2 Max chip." />
+        <title>AHLN - Revolutionary Smart Delivery System</title>
+        <meta name="description" content="AHLN Box provides a revolutionary smart delivery system that ensures your packages are secure, accessible, and delivered efficiently." />
+        <meta name="keywords" content="AHLN, smart delivery, package security, delivery system" />
+        <meta property="og:title" content="AHLN - Smart Delivery System" />
+        <meta property="og:description" content="Revolutionary smart delivery system for secure and efficient package delivery" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
-      <MacBookShowcase />
+
+      <div className="min-h-screen bg-navy-950 text-white">
+        <Navbar />
+        
+        {/* Hero Section */}
+        <div className="container mx-auto px-4 pt-32 pb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6 animate-fade-in">
+              <h1 className="text-4xl md:text-6xl font-bold">
+                WELCOME TO <span className="text-blue-400">AHLN</span>
+              </h1>
+              <p className="text-lg text-gray-300">
+                AHLN Box provides a revolutionary smart delivery system that ensures your
+                packages are secure, accessible, and delivered efficiently. Say goodbye to
+                package theft and missed deliveries.
+              </p>
+              <div className="flex gap-4">
+                <Button className="bg-blue-500 hover:bg-blue-600">
+                  Try Order
+                </Button>
+                <Button variant="outline" className="border-white text-white hover:bg-white/10">
+                  Contact Us
+                </Button>
+              </div>
+            </div>
+            <div className="relative animate-fade-in delay-100">
+              <img
+                src="/lovable-uploads/e3c4c460-58b8-4289-ac1a-50406f3594e0.png"
+                alt="AHLN Smart Delivery Box"
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+
+        <Features />
+        <HowItWorks />
+        <LatestNews />
+        <Newsletter />
+      </div>
     </>
   );
 };
