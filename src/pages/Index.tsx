@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Navbar from '@/components/Navbar';
 import Features from '@/components/Features';
@@ -7,8 +7,17 @@ import HowItWorks from '@/components/HowItWorks';
 import LatestNews from '@/components/LatestNews';
 import Newsletter from '@/components/Newsletter';
 import { Button } from "@/components/ui/button";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const Index = () => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = "/lovable-uploads/e3c4c460-58b8-4289-ac1a-50406f3594e0.png";
+    img.onload = () => setIsImageLoaded(true);
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -46,11 +55,20 @@ const Index = () => {
               </div>
             </div>
             <div className="relative animate-fade-in delay-100">
-              <img
-                src="/lovable-uploads/e3c4c460-58b8-4289-ac1a-50406f3594e0.png"
-                alt="AHLN Smart Delivery Box"
-                className="w-full h-auto"
-              />
+              <AspectRatio ratio={4/3} className="overflow-hidden rounded-lg bg-navy-800/30">
+                {isImageLoaded ? (
+                  <img
+                    src="/lovable-uploads/e3c4c460-58b8-4289-ac1a-50406f3594e0.png"
+                    alt="AHLN Smart Delivery Box"
+                    className="w-full h-full object-cover transition-all duration-500 ease-in-out"
+                    style={{ opacity: 1, transform: 'scale(1)' }}
+                  />
+                ) : (
+                  <div className="flex items-center justify-center w-full h-full bg-navy-800/50">
+                    <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                  </div>
+                )}
+              </AspectRatio>
             </div>
           </div>
         </div>
