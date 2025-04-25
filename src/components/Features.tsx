@@ -44,25 +44,47 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="py-20 bg-navy-900">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center">
-          Amazing Features Of Our New Product
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <div 
-              key={feature.title}
-              className="flex items-start space-x-4 p-6 rounded-lg bg-navy-800/50 hover:bg-navy-800 transition-colors animate-fade-in"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              {feature.icon}
-              <div>
-                <h3 className="font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-400">{feature.description}</p>
+    <section className="py-20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-900/80 to-navy-950"></div>
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Section Title with Border */}
+        <div className="text-center mb-14">
+          <span className="block text-sm text-blue-400 uppercase tracking-wider mb-2">Features</span>
+          <div className="flex justify-center items-center mb-4">
+            <div className="h-1 w-16 bg-blue-500 rounded-full"></div>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Amazing Features Of Our <br />New Product
+          </h2>
+        </div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Product Image - Left Side */}
+          <div className="flex justify-center">
+            <img 
+              src="/lovable-uploads/953b6699-2d3b-4296-bc93-5f17a7b2d2fe.png" 
+              alt="AHLN Smart Delivery Box" 
+              className="w-auto max-h-[500px] object-contain"
+            />
+          </div>
+          
+          {/* Features List - Right Side */}
+          <div className="grid grid-cols-1 gap-8">
+            {features.map((feature, index) => (
+              <div 
+                key={feature.title}
+                className="flex items-start gap-4"
+              >
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-navy-800 flex items-center justify-center">
+                  {feature.icon}
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold text-blue-400 mb-1">{feature.title}</h3>
+                  <p className="text-gray-300">{feature.description}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,9 +64,18 @@ export default {
           ring: 'hsl(var(--sidebar-ring))'
         },
         navy: {
+          700: "#252b4d",
           800: "#1a1f3d",
           900: "#0f1225",
           950: "#0a0c1a",
+        },
+        blue: {
+          300: "#90caf9",
+          400: "#42a5f5",
+          500: "#1e88e5",
+          600: "#1565c0",
+          800: "#0d47a1",
+          900: "#102554",
         }
       },
       borderRadius: {
@@ -105,6 +115,9 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         "fade-slide-up": "fadeSlideUp 0.5s ease-out forwards"
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       }
     }
   },

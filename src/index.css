@@ -99,6 +99,10 @@
   .delay-100 {
     animation-delay: 100ms;
   }
+  
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
 }
 
 @keyframes fadeIn {
@@ -109,6 +113,41 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Particle animations */
+.hero-section {
+  background-image: linear-gradient(135deg, #0a0c1a 0%, #1a237e 100%);
+}
+
+.particles .particle {
+  animation: floatParticle 8s infinite ease-in-out;
+}
+
+.particles .particle:nth-child(2) {
+  animation-delay: 2s;
+  animation-duration: 10s;
+}
+
+.particles .particle:nth-child(3) {
+  animation-delay: 1s;
+  animation-duration: 12s;
+}
+
+.particles .particle:nth-child(4) {
+  animation-delay: 3s;
+  animation-duration: 9s;
+}
+
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.8;
   }
 }
 
