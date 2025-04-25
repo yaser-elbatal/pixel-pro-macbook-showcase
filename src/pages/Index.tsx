@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Navbar from '@/components/Navbar';
@@ -7,7 +6,6 @@ import HowItWorks from '@/components/HowItWorks';
 import LatestNews from '@/components/LatestNews';
 import Newsletter from '@/components/Newsletter';
 import { Button } from "@/components/ui/button";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const Index = () => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -55,20 +53,20 @@ const Index = () => {
               </div>
             </div>
             <div className="relative animate-fade-in delay-100">
-              <AspectRatio ratio={4/3} className="overflow-hidden rounded-lg bg-navy-800/30">
+              <div className="bg-navy-800/30 rounded-lg p-4">
                 {isImageLoaded ? (
                   <img
                     src="/lovable-uploads/953b6699-2d3b-4296-bc93-5f17a7b2d2fe.png"
                     alt="AHLN Smart Delivery Box"
-                    className="w-full h-full object-cover transition-all duration-500 ease-in-out"
+                    className="w-auto max-h-[400px] mx-auto object-contain transition-all duration-500 ease-in-out"
                     style={{ opacity: 1, transform: 'scale(1)' }}
                   />
                 ) : (
-                  <div className="flex items-center justify-center w-full h-full bg-navy-800/50">
+                  <div className="flex items-center justify-center w-full h-[400px]">
                     <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                   </div>
                 )}
-              </AspectRatio>
+              </div>
             </div>
           </div>
         </div>
@@ -123,4 +121,3 @@ const Index = () => {
 };
 
 export default Index;
-
