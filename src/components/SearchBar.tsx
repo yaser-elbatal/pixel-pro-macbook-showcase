@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { Search } from 'lucide-react';
-import { useAppDispatch, useAppSelector } from '@/hooks/useAppSelector';
+import { useAppSelector } from '@/hooks/useAppSelector';
+import { useAppDispatch } from '@/hooks/useAppDispatch';
 import { setSearchTerm, searchProducts } from '@/store/slices/searchSlice';
 import { motion, AnimatePresence } from 'framer-motion';
 
