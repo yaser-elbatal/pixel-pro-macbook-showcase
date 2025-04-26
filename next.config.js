@@ -5,9 +5,9 @@ const nextConfig = {
   swcMinify: true,
   // Add transpilePackages for any packages that need to be transpiled
   transpilePackages: ['react-dom', '@tanstack/react-query'],
-  // Optional: helps with initial migration
-  typescript: {
-    ignoreBuildErrors: true,
+  // Configure image domains if needed
+  images: {
+    domains: ['lovable-uploads.s3.amazonaws.com'],
   },
   // Ensure we properly resolve the modules from the src directory
   webpack: (config) => {
