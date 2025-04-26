@@ -1,5 +1,4 @@
-import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
 
-createRoot(document.getElementById("root")!).render(<App />);
+// This file is not needed in Next.js projects
+// Next.js automatically handles rendering through pages/_app.tsx
+console.log('Next.js handles rendering automatically');

@@ -22,9 +22,11 @@ const Navbar = () => {
     <nav className="fixed w-full z-50 bg-navy-900/80 backdrop-blur-sm">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold text-white flex items-center gap-2">
-            <span className="bg-blue-500 text-white p-1 rounded">AHLN</span>
-            <span className="hidden sm:inline">BOX</span>
+          <Link href="/" passHref legacyBehavior>
+            <a className="text-2xl font-bold text-white flex items-center gap-2">
+              <span className="bg-blue-500 text-white p-1 rounded">AHLN</span>
+              <span className="hidden sm:inline">BOX</span>
+            </a>
           </Link>
           
           <div className="hidden md:flex items-center space-x-8">
@@ -33,34 +35,43 @@ const Navbar = () => {
                 <NavigationMenuItem>
                   <Link 
                     href="/" 
-                    className={cn(
+                    passHref
+                    legacyBehavior
+                  >
+                    <a className={cn(
                       "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-blue-900/20 hover:text-blue-400",
                       router.pathname === "/" ? "border-t-2 border-blue-500 text-blue-400" : "text-white"
-                    )}
-                  >
-                    Home
+                    )}>
+                      Home
+                    </a>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link 
                     href="/about" 
-                    className={cn(
+                    passHref
+                    legacyBehavior
+                  >
+                    <a className={cn(
                       "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-blue-900/20 hover:text-blue-400",
                       router.pathname === "/about" ? "border-t-2 border-blue-500 text-blue-400" : "text-white"
-                    )}
-                  >
-                    About
+                    )}>
+                      About
+                    </a>
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link 
                     href="/products" 
-                    className={cn(
+                    passHref
+                    legacyBehavior
+                  >
+                    <a className={cn(
                       "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-blue-900/20 hover:text-blue-400",
                       router.pathname === "/products" ? "border-t-2 border-blue-500 text-blue-400" : "text-white"
-                    )}
-                  >
-                    Products
+                    )}>
+                      Products
+                    </a>
                   </Link>
                 </NavigationMenuItem>
               </NavigationMenuList>
