@@ -9,15 +9,23 @@ import Newsletter from '@/components/Newsletter';
 import { Button } from "@/components/ui/button";
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
+import { useAppDispatch, useAppSelector } from '@/hooks/useAppSelector';
+import { fetchMetadata } from '@/store/slices/metadataSlice';
 
 const Index = () => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const dispatch = useAppDispatch();
+  const { metadata, isLoading } = useAppSelector(state => state.metadata);
 
   useEffect(() => {
+    // Fetch metadata from the backend
+    dispatch(fetchMetadata());
+
+    // Load hero image
     const img = new Image();
     img.src = "/lovable-uploads/953b6699-2d3b-4296-bc93-5f17a7b2d2fe.png";
     img.onload = () => setIsImageLoaded(true);
-  }, []);
+  }, [dispatch]);
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -37,17 +45,17 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>AHLN - Revolutionary Smart Delivery System</title>
-        <meta name="description" content="Experience the future of package delivery with AHLN Box. Our smart delivery system ensures secure, efficient, and accessible package management." />
-        <meta name="keywords" content="AHLN, smart delivery, package security, delivery system, IoT delivery, secure package" />
-        <meta property="og:title" content="AHLN - Smart Package Delivery System" />
-        <meta property="og:description" content="Revolutionary smart delivery system for secure and efficient package delivery" />
+        <title>{metadata?.title || "AHLN - Revolutionary Smart Delivery System"}</title>
+        <meta name="description" content={metadata?.description || "Experience the future of package delivery with AHLN Box. Our smart delivery system ensures secure, efficient, and accessible package management."} />
+        <meta name="keywords" content={metadata?.keywords || "AHLN, smart delivery, package security, delivery system, IoT delivery, secure package"} />
+        <meta property="og:title" content={metadata?.ogTitle || "AHLN - Smart Package Delivery System"} />
+        <meta property="og:description" content={metadata?.ogDescription || "Revolutionary smart delivery system for secure and efficient package delivery"} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/lovable-uploads/953b6699-2d3b-4296-bc93-5f17a7b2d2fe.png" />
+        <meta property="og:image" content={metadata?.ogImage || "/lovable-uploads/953b6699-2d3b-4296-bc93-5f17a7b2d2fe.png"} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AHLN - Smart Package Delivery" />
-        <meta name="twitter:description" content="Revolutionizing package delivery with smart, secure technology" />
-        <meta name="twitter:image" content="/lovable-uploads/953b6699-2d3b-4296-bc93-5f17a7b2d2fe.png" />
+        <meta name="twitter:title" content={metadata?.twitterTitle || "AHLN - Smart Package Delivery"} />
+        <meta name="twitter:description" content={metadata?.twitterDescription || "Revolutionizing package delivery with smart, secure technology"} />
+        <meta name="twitter:image" content={metadata?.twitterImage || "/lovable-uploads/953b6699-2d3b-4296-bc93-5f17a7b2d2fe.png"} />
       </Helmet>
 
       <div className="min-h-screen text-white">
