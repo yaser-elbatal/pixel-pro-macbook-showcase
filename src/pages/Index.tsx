@@ -38,32 +38,34 @@ const Index = () => {
     <>
       <Helmet>
         <title>AHLN - Revolutionary Smart Delivery System</title>
-        <meta name="description" content="AHLN Box provides a revolutionary smart delivery system that ensures your packages are secure, accessible, and delivered efficiently." />
-        <meta name="keywords" content="AHLN, smart delivery, package security, delivery system" />
-        <meta property="og:title" content="AHLN - Smart Delivery System" />
+        <meta name="description" content="Experience the future of package delivery with AHLN Box. Our smart delivery system ensures secure, efficient, and accessible package management." />
+        <meta name="keywords" content="AHLN, smart delivery, package security, delivery system, IoT delivery, secure package" />
+        <meta property="og:title" content="AHLN - Smart Package Delivery System" />
         <meta property="og:description" content="Revolutionary smart delivery system for secure and efficient package delivery" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="/lovable-uploads/953b6699-2d3b-4296-bc93-5f17a7b2d2fe.png" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AHLN - Smart Package Delivery" />
+        <meta name="twitter:description" content="Revolutionizing package delivery with smart, secure technology" />
+        <meta name="twitter:image" content="/lovable-uploads/953b6699-2d3b-4296-bc93-5f17a7b2d2fe.png" />
       </Helmet>
 
-      <div className="min-h-screen bg-navy-950 text-white">
+      <div className="min-h-screen text-white">
         <Navbar />
         
-        {/* Hero Section with Gradient Background and Particles */}
+        {/* Hero Section with Enhanced Gradient Background and Light Circle */}
         <motion.div 
           initial="hidden"
           animate="visible"
           variants={staggerChildren}
           className="hero-section relative overflow-hidden pt-32 pb-20"
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-navy-950 to-blue-900"></div>
+          {/* Enhanced gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-b from-navy-900/50 via-blue-900/30 to-navy-950"></div>
           
-          {/* Enhanced decorative particles */}
-          <div className="particles absolute inset-0">
-            <div className="particle absolute top-1/4 left-1/5 w-6 h-6 rounded-full bg-blue-400/20"></div>
-            <div className="particle absolute top-1/3 right-1/4 w-4 h-4 rounded-full bg-blue-300/10"></div>
-            <div className="particle absolute bottom-1/4 left-1/3 w-8 h-8 rounded-full bg-blue-500/20"></div>
-            <div className="particle absolute top-2/3 right-1/3 w-5 h-5 rounded-full bg-blue-400/15"></div>
+          {/* Large light circle in background */}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px]">
+            <div className="absolute inset-0 rounded-full bg-gradient-radial from-blue-500/10 via-blue-400/5 to-transparent blur-3xl"></div>
           </div>
           
           <div className="container mx-auto px-4 relative z-10">
