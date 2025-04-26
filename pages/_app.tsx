@@ -9,6 +9,7 @@ import { Toaster as Sonner } from '@/components/ui/sonner';
 import Head from 'next/head';
 import '@/styles/globals.css';
 
+// Create a client
 const queryClient = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps) {

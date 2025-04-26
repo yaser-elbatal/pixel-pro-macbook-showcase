@@ -39,19 +39,29 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6 font-playfair">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/" className="text-gray-400 hover:text-blue-400 transition-colors">Home</Link>
+                <Link href="/" className="text-gray-400 hover:text-blue-400 transition-colors">
+                  Home
+                </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-400 hover:text-blue-400 transition-colors">About</Link>
+                <Link href="/about" className="text-gray-400 hover:text-blue-400 transition-colors">
+                  About
+                </Link>
               </li>
               <li>
-                <Link href="/products" className="text-gray-400 hover:text-blue-400 transition-colors">Products</Link>
+                <Link href="/products" className="text-gray-400 hover:text-blue-400 transition-colors">
+                  Products
+                </Link>
               </li>
               <li>
-                <Link href="/pricing" className="text-gray-400 hover:text-blue-400 transition-colors">Pricing</Link>
+                <Link href="/pricing" className="text-gray-400 hover:text-blue-400 transition-colors">
+                  Pricing
+                </Link>
               </li>
               <li>
-                <Link href="/faq" className="text-gray-400 hover:text-blue-400 transition-colors">FAQ</Link>
+                <Link href="/faq" className="text-gray-400 hover:text-blue-400 transition-colors">
+                  FAQ
+                </Link>
               </li>
             </ul>
           </div>
@@ -95,9 +105,15 @@ const Footer = () => {
         <div className="border-t border-navy-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
           <p>© 2023 AHLN Box. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <Link href="/privacy" className="hover:text-blue-400 transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-blue-400 transition-colors">Terms of Service</Link>
-            <Link href="/cookie" className="hover:text-blue-400 transition-colors">Cookie Policy</Link>
+            <Link href="/privacy" className="hover:text-blue-400 transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-blue-400 transition-colors">
+              Terms of Service
+            </Link>
+            <Link href="/cookie" className="hover:text-blue-400 transition-colors">
+              Cookie Policy
+            </Link>
           </div>
         </div>
       </div>

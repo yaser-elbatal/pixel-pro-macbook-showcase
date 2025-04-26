@@ -14,6 +14,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>AHLN - Revolutionary Smart Delivery System</title>
+        <meta name="description" content="Experience the future of package delivery with AHLN Box" />
       </Head>
       <div className="min-h-screen bg-navy-950 text-white font-poppins">
         <Navbar />

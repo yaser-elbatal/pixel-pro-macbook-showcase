@@ -3,9 +3,11 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  // Add any additional Next.js configuration here
+  // Add transpilePackages for any packages that need to be transpiled
+  transpilePackages: ['react-dom', '@tanstack/react-query'],
+  // Optional: helps with initial migration
   typescript: {
-    ignoreBuildErrors: true, // Optional: helps with initial migration
+    ignoreBuildErrors: true,
   },
 };
 
