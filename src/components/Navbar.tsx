@@ -1,13 +1,13 @@
 
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Search } from 'lucide-react';
 import { 
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
@@ -16,13 +16,13 @@ import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const location = useLocation();
+  const router = useRouter();
 
   return (
     <nav className="fixed w-full z-50 bg-navy-900/80 backdrop-blur-sm">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-2xl font-bold text-white flex items-center gap-2">
+          <Link href="/" className="text-2xl font-bold text-white flex items-center gap-2">
             <span className="bg-blue-500 text-white p-1 rounded">AHLN</span>
             <span className="hidden sm:inline">BOX</span>
           </Link>
@@ -32,10 +32,10 @@ const Navbar = () => {
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <Link 
-                    to="/" 
+                    href="/" 
                     className={cn(
                       "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-blue-900/20 hover:text-blue-400",
-                      location.pathname === "/" ? "border-t-2 border-blue-500 text-blue-400" : "text-white"
+                      router.pathname === "/" ? "border-t-2 border-blue-500 text-blue-400" : "text-white"
                     )}
                   >
                     Home
@@ -43,10 +43,10 @@ const Navbar = () => {
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link 
-                    to="/about" 
+                    href="/about" 
                     className={cn(
                       "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-blue-900/20 hover:text-blue-400",
-                      location.pathname === "/about" ? "border-t-2 border-blue-500 text-blue-400" : "text-white"
+                      router.pathname === "/about" ? "border-t-2 border-blue-500 text-blue-400" : "text-white"
                     )}
                   >
                     About
@@ -54,24 +54,13 @@ const Navbar = () => {
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                   <Link 
-                    to="/products" 
+                    href="/products" 
                     className={cn(
                       "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-blue-900/20 hover:text-blue-400",
-                      location.pathname === "/products" ? "border-t-2 border-blue-500 text-blue-400" : "text-white"
+                      router.pathname === "/products" ? "border-t-2 border-blue-500 text-blue-400" : "text-white"
                     )}
                   >
                     Products
-                  </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Link 
-                    to="/contact" 
-                    className={cn(
-                      "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-blue-900/20 hover:text-blue-400",
-                      location.pathname === "/contact" ? "border-t-2 border-blue-500 text-blue-400" : "text-white"
-                    )}
-                  >
-                    Contact Us
                   </Link>
                 </NavigationMenuItem>
               </NavigationMenuList>
