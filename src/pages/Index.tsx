@@ -8,6 +8,7 @@ import LatestNews from '@/components/LatestNews';
 import Newsletter from '@/components/Newsletter';
 import { Button } from "@/components/ui/button";
 import Footer from '@/components/Footer';
+import { motion } from 'framer-motion';
 
 const Index = () => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -17,6 +18,21 @@ const Index = () => {
     img.src = "/lovable-uploads/953b6699-2d3b-4296-bc93-5f17a7b2d2fe.png";
     img.onload = () => setIsImageLoaded(true);
   }, []);
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+  };
+
+  const staggerChildren = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.3
+      }
+    }
+  };
 
   return (
     <>
@@ -34,10 +50,15 @@ const Index = () => {
         <Navbar />
         
         {/* Hero Section with Gradient Background and Particles */}
-        <div className="hero-section relative overflow-hidden pt-32 pb-20">
+        <motion.div 
+          initial="hidden"
+          animate="visible"
+          variants={staggerChildren}
+          className="hero-section relative overflow-hidden pt-32 pb-20"
+        >
           <div className="absolute inset-0 bg-gradient-to-b from-navy-950 to-blue-900"></div>
           
-          {/* Decorative particles */}
+          {/* Enhanced decorative particles */}
           <div className="particles absolute inset-0">
             <div className="particle absolute top-1/4 left-1/5 w-6 h-6 rounded-full bg-blue-400/20"></div>
             <div className="particle absolute top-1/3 right-1/4 w-4 h-4 rounded-full bg-blue-300/10"></div>
@@ -47,41 +68,62 @@ const Index = () => {
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6 animate-fade-in">
-                <h1 className="text-4xl md:text-6xl font-bold">
+              <motion.div 
+                variants={fadeInUp} 
+                className="space-y-6"
+              >
+                <motion.h1 
+                  variants={fadeInUp} 
+                  className="text-4xl md:text-6xl font-bold"
+                >
                   WELCOME TO <span className="text-blue-400">AHLN</span>
-                </h1>
-                <p className="text-lg text-gray-300">
+                </motion.h1>
+                <motion.p 
+                  variants={fadeInUp} 
+                  className="text-lg text-gray-300"
+                >
                   AHLN Box provides a revolutionary smart delivery system that ensures your
                   packages are secure, accessible, and delivered efficiently. Say goodbye to
                   package theft and missed deliveries.
-                </p>
-                <div className="flex gap-4 mt-8">
+                </motion.p>
+                <motion.div 
+                  variants={fadeInUp} 
+                  className="flex gap-4 mt-8"
+                >
                   <Button className="bg-blue-500 hover:bg-blue-600 px-8">
                     Try Order
                   </Button>
                   <Button variant="outline" className="border-white text-white hover:bg-white/10">
                     Contact Us
                   </Button>
-                </div>
-              </div>
-              <div className="relative animate-fade-in delay-100 flex items-center justify-center">
+                </motion.div>
+              </motion.div>
+              <motion.div 
+                variants={fadeInUp}
+                className="relative flex items-center justify-center"
+              >
                 {isImageLoaded ? (
-                  <img
-                    src="/lovable-uploads/953b6699-2d3b-4296-bc93-5f17a7b2d2fe.png"
-                    alt="AHLN Smart Delivery Box"
-                    className="w-auto max-h-[500px] mx-auto object-contain transition-all duration-500 ease-in-out z-10"
-                    style={{ opacity: 1, transform: 'scale(1)' }}
-                  />
+                  <div className="relative">
+                    {/* Radial gradient shadow/glow effect */}
+                    <div className="absolute inset-0 -m-8 rounded-full bg-gradient-radial from-blue-500/30 via-blue-800/10 to-transparent blur-xl"></div>
+                    <motion.img
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 1 }}
+                      src="/lovable-uploads/953b6699-2d3b-4296-bc93-5f17a7b2d2fe.png"
+                      alt="AHLN Smart Delivery Box"
+                      className="w-auto max-h-[500px] mx-auto object-contain relative z-10"
+                    />
+                  </div>
                 ) : (
                   <div className="flex items-center justify-center w-full h-[400px]">
                     <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                   </div>
                 )}
-              </div>
+              </motion.div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         <Features />
         <HowItWorks />
