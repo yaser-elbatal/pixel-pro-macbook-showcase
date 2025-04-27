@@ -1,5 +1,5 @@
 
-import Image from 'next/image';
+import Image from 'next';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { Button } from "@/components/ui/button";
@@ -7,6 +7,9 @@ import Features from '@/components/Features';
 import HowItWorks from '@/components/HowItWorks';
 import LatestNews from '@/components/LatestNews';
 import Newsletter from '@/components/Newsletter';
+
+// Correctly import the Image component from next/image
+import NextImage from 'next/image';
 
 export async function generateMetadata(): Promise<Metadata> {
   try {
@@ -74,7 +77,7 @@ export default function Home() {
             <div className="relative flex items-center justify-center">
               <div className="relative">
                 <div className="absolute inset-0 -m-8 rounded-full bg-gradient-radial from-blue-500/30 via-blue-800/10 to-transparent blur-xl"></div>
-                <Image
+                <NextImage
                   src="/lovable-uploads/7be694d4-e2f1-4648-8ce9-033f2742c75e.png"
                   alt="AHLN Smart Delivery Box"
                   width={500}
