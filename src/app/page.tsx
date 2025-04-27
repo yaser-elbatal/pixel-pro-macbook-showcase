@@ -4,8 +4,41 @@ import HowItWorks from '@/components/HowItWorks'
 import LatestNews from '@/components/LatestNews'
 import Newsletter from '@/components/Newsletter'
 import { Button } from "@/components/ui/button"
-import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { fetchMetadata } from '@/store/slices/metadataSlice'
+import { Metadata } from 'next'
+
+export async function generateMetadata(): Promise<Metadata> {
+  try {
+    // In a real app, this would be a server-side fetch
+    // Here we're simulating a fetch by using the same mock data from our metadataSlice
+    await new Promise(resolve => setTimeout(resolve, 200)); // Simulate network delay
+    
+    const metadata = {
+      title: "AHLN - Revolutionary Smart Delivery System",
+      description: "Experience the future of package delivery with AHLN Box. Our smart delivery system ensures secure, efficient, and accessible package management.",
+      openGraph: {
+        title: "AHLN - Smart Package Delivery System",
+        description: "Revolutionary smart delivery system for secure and efficient package delivery",
+        images: ['/lovable-uploads/953b6699-2d3b-4296-bc93-5f17a7b2d2fe.png'],
+      },
+      twitter: {
+        title: "AHLN - Smart Package Delivery",
+        description: "Revolutionizing package delivery with smart, secure technology",
+        images: ['/lovable-uploads/953b6699-2d3b-4296-bc93-5f17a7b2d2fe.png'],
+      },
+      keywords: "AHLN, smart delivery, package security, delivery system, IoT delivery, secure package",
+    };
+    
+    return metadata;
+  } catch (error) {
+    console.error("Error fetching metadata:", error);
+    return {
+      title: "AHLN Box - Smart Delivery",
+      description: "Experience the future of package delivery",
+    };
+  }
+}
 
 export default function Home() {
   return (

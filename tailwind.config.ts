@@ -1,15 +1,16 @@
 
-import { type Config } from "tailwindcss";
+import type { Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
 
-export default {
+const config = {
   darkMode: ["class"],
   content: [
     './pages/**/*.{ts,tsx}',
-    './src/components/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
   ],
+  prefix: "",
   theme: {
     container: {
       center: true,
@@ -19,11 +20,6 @@ export default {
       },
     },
     extend: {
-      fontFamily: {
-        sans: ["var(--font-poppins)", ...fontFamily.sans],
-        playfair: ["var(--font-playfair)", ...fontFamily.serif],
-        poppins: ["var(--font-poppins)", ...fontFamily.sans],
-      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -31,17 +27,17 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         navy: {
-          50: '#f0f4f8',
-          100: '#d9e2ec',
-          200: '#bcccdc',
-          300: '#9fb3c8',
-          400: '#7d94b1',
-          500: '#486581',
-          600: '#334e68',
-          700: '#243b53',
-          800: '#102a43',
-          900: '#0c1c2c',
-          950: '#020817',
+          '50': '#f0f5ff',
+          '100': '#e0eaff',
+          '200': '#c7d9fe',
+          '300': '#a0c0fc',
+          '400': '#769ff8',
+          '500': '#5380f2',
+          '600': '#3761e6',
+          '700': '#2a4dd2',
+          '800': '#273faa',
+          '900': '#273a87',
+          '950': '#0f172a',
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -72,10 +68,17 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      fontFamily: {
+        sans: ["var(--font-poppins)", ...fontFamily.sans],
+        serif: ["var(--font-playfair)", ...fontFamily.serif],
       },
       keyframes: {
         "accordion-down": {
@@ -95,3 +98,5 @@ export default {
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
+export default config;
