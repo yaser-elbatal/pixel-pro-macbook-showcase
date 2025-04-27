@@ -1,17 +1,17 @@
 
-import Features from '@/components/Features'
-import HowItWorks from '@/components/HowItWorks'
-import LatestNews from '@/components/LatestNews'
-import Newsletter from '@/components/Newsletter'
-import { Button } from "@/components/ui/button"
-import Image from 'next/image'
-import { fetchMetadata } from '@/store/slices/metadataSlice'
-import { Metadata } from 'next'
+import Image from 'next/image';
+import Link from 'next/link';
+import { Metadata } from 'next';
+import { Button } from "@/components/ui/button";
+import Features from '@/components/Features';
+import HowItWorks from '@/components/HowItWorks';
+import LatestNews from '@/components/LatestNews';
+import Newsletter from '@/components/Newsletter';
 
 export async function generateMetadata(): Promise<Metadata> {
   try {
     // In a real app, this would be a server-side fetch
-    // Here we're simulating a fetch by using the same mock data from our metadataSlice
+    // Simulating a fetch by using mock data
     await new Promise(resolve => setTimeout(resolve, 200)); // Simulate network delay
     
     const metadata = {
@@ -43,8 +43,15 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function Home() {
   return (
     <>
-      <div className="pt-32 pb-20">
-        <div className="container mx-auto px-4">
+      <div className="pt-32 pb-20 bg-navy-950 relative overflow-hidden">
+        {/* Background particles */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-1/4 left-1/4 w-4 h-4 rounded-full bg-blue-500/30"></div>
+          <div className="absolute top-1/3 right-1/3 w-6 h-6 rounded-full bg-blue-400/20"></div>
+          <div className="absolute bottom-1/4 left-1/3 w-5 h-5 rounded-full bg-blue-600/20"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-6xl font-bold">
@@ -52,7 +59,8 @@ export default function Home() {
               </h1>
               <p className="text-lg text-gray-300">
                 AHLN Box provides a revolutionary smart delivery system that ensures your
-                packages are secure, accessible, and delivered efficiently.
+                packages are secure, accessible, and delivered efficiently. Say goodbye to
+                package theft and missed deliveries.
               </p>
               <div className="flex gap-4 mt-8">
                 <Button className="bg-blue-500 hover:bg-blue-600 px-8">
@@ -67,11 +75,11 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute inset-0 -m-8 rounded-full bg-gradient-radial from-blue-500/30 via-blue-800/10 to-transparent blur-xl"></div>
                 <Image
-                  src="/lovable-uploads/953b6699-2d3b-4296-bc93-5f17a7b2d2fe.png"
+                  src="/lovable-uploads/7be694d4-e2f1-4648-8ce9-033f2742c75e.png"
                   alt="AHLN Smart Delivery Box"
                   width={500}
-                  height={500}
-                  className="w-auto max-h-[500px] mx-auto object-contain relative z-10"
+                  height={600}
+                  className="w-auto max-h-[600px] mx-auto object-contain relative z-10"
                   priority
                 />
               </div>
@@ -79,6 +87,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      
       <Features />
       <HowItWorks />
       <LatestNews />

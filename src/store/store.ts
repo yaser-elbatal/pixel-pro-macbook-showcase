@@ -1,16 +1,16 @@
 
 import { configureStore } from '@reduxjs/toolkit';
-import searchReducer from './slices/searchSlice';
-import productsReducer from './slices/productsSlice';
 import newsReducer from './slices/newsSlice';
 import metadataReducer from './slices/metadataSlice';
+import productsReducer from './slices/productsSlice';
+import searchReducer from './slices/searchSlice';
 
 export const store = configureStore({
   reducer: {
-    search: searchReducer,
-    products: productsReducer,
     news: newsReducer,
     metadata: metadataReducer,
+    products: productsReducer,
+    search: searchReducer,
   },
 });
 

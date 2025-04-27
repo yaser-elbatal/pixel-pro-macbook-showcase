@@ -1,13 +1,13 @@
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const steps = [
   {
     number: 1,
     title: "Order Online",
     description: "Shop from your favorite retailers and select AHLN Box for your delivery option.",
-    icon: "💻" // We'll use emoji as placeholders, replace with proper icons later
+    icon: "💻" 
   },
   {
     number: 2,
@@ -30,30 +30,10 @@ const steps = [
 ];
 
 const HowItWorks = () => {
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-  };
-  
-  const staggerSteps = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3
-      }
-    }
-  };
-
   return (
-    <motion.section 
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      className="py-20 relative bg-navy-950"
-    >
+    <section className="py-20 relative bg-navy-950">
       <div className="container mx-auto px-4">
-        <motion.div variants={fadeInUp} className="text-center mb-14">
+        <div className="text-center mb-14">
           <span className="block text-sm text-blue-400 uppercase tracking-wider mb-2">Process</span>
           <div className="flex justify-center items-center mb-4">
             <div className="h-1 w-16 bg-blue-500 rounded-full"></div>
@@ -62,18 +42,13 @@ const HowItWorks = () => {
           <p className="text-gray-400 max-w-2xl mx-auto">
             A simple, streamlined process that makes package delivery and retrieval effortless.
           </p>
-        </motion.div>
+        </div>
         
-        <motion.div 
-          variants={staggerSteps}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step) => (
-            <motion.div 
+            <div 
               key={step.number} 
-              variants={fadeInUp}
               className="flex flex-col items-center text-center"
-              whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
             >
               <div className="w-16 h-16 rounded-full bg-blue-500 text-white flex items-center justify-center text-2xl font-bold mb-6">
                 {step.number}
@@ -87,11 +62,11 @@ const HowItWorks = () => {
                 <h3 className="text-xl font-bold mb-3">{step.title}</h3>
                 <p className="text-gray-400">{step.description}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

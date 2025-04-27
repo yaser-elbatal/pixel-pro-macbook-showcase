@@ -66,15 +66,6 @@ const Newsletter = () => {
                   />
                 </div>
                 
-                <div>
-                  <label className="text-sm text-gray-400 block mb-1">Your Interest</label>
-                  <Input 
-                    type="text" 
-                    placeholder="What are you most interested in?" 
-                    className="bg-navy-800 border-navy-700"
-                  />
-                </div>
-                
                 <div className="flex items-start gap-2">
                   <Checkbox id="terms" />
                   <div className="grid gap-1.5 leading-none">
