@@ -2,6 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
+import SearchBar from './SearchBar';
 
 const Navbar = () => {
   return (
@@ -28,6 +29,9 @@ const Navbar = () => {
               <Link href="/contact-us" className="text-white hover:text-blue-400 transition-colors">
                 Contact Us
               </Link>
+            </div>
+            <div className="hidden lg:block w-48">
+              <SearchBar />
             </div>
             <Button className="bg-blue-500 hover:bg-blue-600 rounded-md">
               Try Order

@@ -75,7 +75,7 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute inset-0 -m-8 rounded-full bg-gradient-radial from-blue-500/30 via-blue-800/10 to-transparent blur-xl"></div>
                 <Image
-                  src="/lovable-uploads/7be694d4-e2f1-4648-8ce9-033f2742c75e.png"
+                  src="/lovable-uploads/f5760ed8-3fa5-4bfa-aff0-b758e3b29d8b.png"
                   alt="AHLN Smart Delivery Box"
                   width={500}
                   height={600}
