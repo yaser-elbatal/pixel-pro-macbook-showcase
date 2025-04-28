@@ -1,11 +1,8 @@
-
 // This file is not needed in a Next.js project
-// Next.js handles routing through the pages directory
-// See pages/_app.tsx for the main application component
+// Next.js handles routing through the app directory
+// This is a placeholder file
 
 const App = () => {
-  // This is a placeholder to avoid build errors
-  // The actual app is rendered through Next.js pages
   return null;
 };
 
