@@ -7,18 +7,17 @@ import { store } from './store/store'
 import App from './App'
 import './index.css'
 
-// Create root with a null check to ensure element exists
+// Use createRoot API with proper error handling
 const rootElement = document.getElementById('root')
-if (rootElement) {
-  ReactDOM.createRoot(rootElement).render(
-    <React.StrictMode>
-      <Provider store={store}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </Provider>
-    </React.StrictMode>,
-  )
-} else {
-  console.error('Root element not found in the document')
-}
+if (!rootElement) throw new Error('Failed to find the root element')
+
+const root = ReactDOM.createRoot(rootElement)
+root.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  </React.StrictMode>
+)

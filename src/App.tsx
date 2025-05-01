@@ -8,7 +8,7 @@ import AboutPage from './pages/AboutPage';
 import ProductsPage from './pages/ProductsPage';
 import ContactUsPage from './pages/ContactUsPage';
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-navy-950 text-white">
       <Navbar />
