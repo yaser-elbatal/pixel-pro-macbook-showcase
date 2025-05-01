@@ -1,15 +1,15 @@
 
 import React from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import SearchBar from './SearchBar';
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   return (
     <nav className="fixed w-full z-50 bg-navy-950/90 backdrop-blur-sm">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold text-white">
+          <Link to="/" className="text-2xl font-bold text-white">
             <span className="flex items-center">
               <span className="text-white">Ahln.</span>
             </span>
@@ -17,16 +17,16 @@ const Navbar = () => {
           
           <div className="hidden md:flex items-center space-x-8">
             <div className="flex items-center space-x-6">
-              <Link href="/" className="text-white hover:text-blue-400 transition-colors">
+              <Link to="/" className="text-white hover:text-blue-400 transition-colors">
                 Home
               </Link>
-              <Link href="/about" className="text-white hover:text-blue-400 transition-colors">
+              <Link to="/about" className="text-white hover:text-blue-400 transition-colors">
                 About
               </Link>
-              <Link href="/products" className="text-white hover:text-blue-400 transition-colors">
+              <Link to="/products" className="text-white hover:text-blue-400 transition-colors">
                 Products
               </Link>
-              <Link href="/contact-us" className="text-white hover:text-blue-400 transition-colors">
+              <Link to="/contact-us" className="text-white hover:text-blue-400 transition-colors">
                 Contact Us
               </Link>
             </div>

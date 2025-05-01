@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-const AboutPage = () => {
+const AboutPage: React.FC = () => {
   return (
     <div className="pt-32 pb-20 bg-navy-950">
       <div className="container mx-auto px-4">
