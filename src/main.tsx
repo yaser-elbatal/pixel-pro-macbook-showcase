@@ -7,22 +7,25 @@ import { store } from './store/store'
 import App from './App'
 import './index.css'
 
-// Find the root element
-const rootElement = document.getElementById('root')
+// Wait for DOM to be fully loaded before initializing React
+document.addEventListener('DOMContentLoaded', () => {
+  // Find the root element
+  const rootElement = document.getElementById('root')
 
-if (!rootElement) {
-  console.error('Failed to find root element with id "root"')
-} else {
-  // Create root and render
-  const root = ReactDOM.createRoot(rootElement)
-  
-  root.render(
-    <React.StrictMode>
-      <Provider store={store}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </Provider>
-    </React.StrictMode>
-  )
-}
+  if (!rootElement) {
+    console.error('Failed to find root element with id "root"')
+  } else {
+    // Create root and render
+    const root = ReactDOM.createRoot(rootElement)
+    
+    root.render(
+      <React.StrictMode>
+        <Provider store={store}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </Provider>
+      </React.StrictMode>
+    )
+  }
+})
