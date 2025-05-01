@@ -1,30 +1,34 @@
 
 import React from 'react'
-import * as ReactDOM from 'react-dom/client'
+import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { store } from './store/store'
 import App from './App'
 import './index.css'
 
-// Ensure the DOM is fully loaded before mounting React
+// Wait for DOM content to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
   const rootElement = document.getElementById('root')
   
   if (!rootElement) {
-    console.error('Failed to find the root element')
+    console.error('Failed to find root element with id "root"')
     return
   }
   
-  // Create the root using the stable createRoot API
-  const root = ReactDOM.createRoot(rootElement)
-  
-  // Render the app
-  root.render(
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
-  )
+  try {
+    const root = createRoot(rootElement)
+    
+    root.render(
+      <React.StrictMode>
+        <Provider store={store}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </Provider>
+      </React.StrictMode>
+    )
+  } catch (error) {
+    console.error('Failed to render React application:', error)
+  }
 })

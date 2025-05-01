@@ -1,6 +1,5 @@
 
 import React from 'react';
-import Image from 'next/image';
 import { 
   Smartphone, 
   Video, 
@@ -65,11 +64,9 @@ const Features = () => {
             {/* Radial gradient shadow/glow effect */}
             <div className="relative">
               <div className="absolute inset-0 -m-8 rounded-full bg-gradient-radial from-blue-400/30 via-blue-700/10 to-transparent blur-xl"></div>
-              <Image 
+              <img 
                 src="/lovable-uploads/f5760ed8-3fa5-4bfa-aff0-b758e3b29d8b.png" 
                 alt="AHLN Smart Delivery Box" 
-                width={400}
-                height={500}
                 className="w-auto max-h-[500px] object-contain relative z-10"
               />
             </div>
