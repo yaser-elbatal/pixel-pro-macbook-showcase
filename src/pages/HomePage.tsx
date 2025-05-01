@@ -1,13 +1,12 @@
 
 import React from 'react';
-import Features from '@/components/Features';
-import HowItWorks from '@/components/HowItWorks';
-import LatestNews from '@/components/LatestNews';
-import Newsletter from '@/components/Newsletter';
-import { Button } from "@/components/ui/button";
-import Image from 'next/image';
+import Features from '../components/Features';
+import HowItWorks from '../components/HowItWorks';
+import LatestNews from '../components/LatestNews';
+import Newsletter from '../components/Newsletter';
+import { Button } from "../components/ui/button";
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   return (
     <>
       <div className="pt-32 pb-20 bg-navy-950 relative overflow-hidden">
