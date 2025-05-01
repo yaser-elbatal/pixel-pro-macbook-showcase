@@ -4,7 +4,7 @@
 import React, { useState } from 'react';
 import { Search } from 'lucide-react';
 import { useAppDispatch } from '@/hooks/reduxHooks';
-import { setSearchQuery } from '@/store/slices/searchSlice';
+import { setSearchTerm } from '@/store/slices/searchSlice';
 
 const SearchBar = () => {
   const [query, setQuery] = useState('');
@@ -12,7 +12,7 @@ const SearchBar = () => {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    dispatch(setSearchQuery(query));
+    dispatch(setSearchTerm(query));
   };
 
   return (
