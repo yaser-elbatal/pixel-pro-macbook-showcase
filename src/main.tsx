@@ -7,18 +7,17 @@ import { store } from './store/store'
 import App from './App'
 import './index.css'
 
-// Use an IIFE to avoid any potential issues with global scope
-(function() {
+// Using a different approach to initialize React
+window.addEventListener('DOMContentLoaded', () => {
+  const rootElement = document.getElementById('root')
+  
+  if (!rootElement) {
+    console.error('Failed to find root element with id "root"')
+    return
+  }
+  
   try {
-    // Find the root element
-    const rootElement = document.getElementById('root')
-
-    if (!rootElement) {
-      console.error('Failed to find root element with id "root"')
-      return
-    }
-
-    // Create root and render
+    // Create root with explicit typing
     const root = ReactDOM.createRoot(rootElement)
     
     root.render(
@@ -31,6 +30,6 @@ import './index.css'
       </React.StrictMode>
     )
   } catch (error) {
-    console.error('Error initializing React application:', error)
+    console.error('Error rendering React application:', error)
   }
-})()
+})
